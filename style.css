@@ -1,0 +1,477 @@
+/* Universal reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+
+
+/* Fix the mountains image at the bottom */
+.mountains-container {
+    position: fixed; /* Sticks to the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1; /* Keep it behind other elements */
+}
+
+/* Ensure the mountains image stretches fully */
+.mountains {
+    width: 100%; /* Make it fill the width */
+    height: auto; /* Keep aspect ratio */
+    display: block;
+}
+
+/* Position the pencil icon */
+/* Position the pencil icon next to "username" */
+.edit-icon {
+    width: 16px; /* Adjust icon size */
+    height: auto;
+    margin-left: 8px; /* Space from username */
+    vertical-align: middle; /* Align with text */
+    cursor: pointer; /* Indicate it's clickable */
+    opacity: 0.8; /* Slight transparency */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.edit-icon:hover {
+    opacity: 1; /* Fully visible on hover */
+}
+
+/* Body Styling - REMOVE background image */
+body {
+    cursor: url('flower.png'), auto;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #d8f9f4; /* Keep background color */
+    color: #1d574c;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+
+/* Dashboard Header - Align to Left */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    width: calc(100% - 160px);
+    text-align: left;
+}
+
+/* Dashboard Title Styling */
+.dashboard-info h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d574c;
+    margin-bottom: 20px; /* Adds space below "Your Dashboard" */
+}
+
+/* User Information Styling */
+#userDetails {
+    font-size: 20px;
+    font-weight: 400;
+    color: #1d574c;
+    line-height: 1.8; /* Increases spacing between lines */
+}
+
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    position: absolute;
+    top: 50px;
+    left: 680px; /* Adjust for centering */
+}
+
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    position: absolute;
+    top: 50px;
+    left: 550px; /* Move it more to the left */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increase spacing between buttons */
+}
+
+.btn {
+    background-color: #c9e5c0;
+    color: #1d574c;
+    padding: 15px 40px; /* Make buttons larger */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px; /* Increase text size */
+    text-align: center;
+    width: 500px; /* Make the buttons wider */
+    height: 100px; /* Make the buttons wider */
+}
+
+.btn:hover {
+    background-color: #a5c09c; /* Slightly darker hover effect */
+}
+
+
+
+/* Cloud images container - Moves behind all other elements */
+.cloud-container {
+    position: absolute;
+    width: 100%;
+    top: -20px; /* Moves clouds higher */
+    left: 0;
+    display: flex;
+    justify-content: space-between; /* Spreads clouds apart */
+    pointer-events: none; /* Prevents interaction issues */
+    z-index: -1; /* Moves clouds behind other elements */
+}
+
+/* Left Cloud - Bigger, Flipped, and Custom Positioning */
+.cloud-left {
+    position: absolute;
+    top: -200px; /* Moves the cloud higher */
+    left: -150px; /* Moves it off the page */
+    width: 600px;  /* Adjust width */
+    height: auto; /* Ensure correct height */
+    transform: scaleX(-1); /* Flip horizontally */
+}
+
+/* Right Cloud - Smaller, Independent Positioning */
+.cloud-right {
+    position: absolute;
+    top: -200px; /* Moves the cloud higher */
+    right: -150px; /* Moves it off the page */
+    width: 400px;  /* Adjust width */
+    height: auto; /* Ensure correct height */
+    transform: scaleX(-1); /* Flip horizontally */
+}
+
+/* Header styling */
+h1 {
+    font-size: 24px;
+    margin-top: 50px;
+    font-weight: 700;
+}
+
+/* Button styling */
+.button-container {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #c9e5c0;
+    color: #1d574c;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.rectangle {
+    position: absolute;
+    background: #1d574c;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 200px;
+    min-height: 100px;
+    width: 350px;
+    height: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    cursor: grab;
+}
+
+.rectangle:active {
+    cursor: grabbing;
+}
+
+.resizer {
+    width: 15px;
+    height: 15px;
+    background: #c9e5c0;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    cursor: se-resize;
+    border-radius: 50%;
+}
+
+/* Activity list */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+li {
+    background: white;
+    color: #1d574c;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    width: 90%;
+    margin: 5px auto;
+}
+
+/* Delete button */
+.delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+/* Input box and save button container */
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-box {
+    width: 70%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.save-btn {
+    background-color: #c9e5c0;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/* Activity list */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+li {
+    background: white;
+    color: #1d574c;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    width: 90%;
+    margin: 5px auto;
+}
+
+/* Delete button */
+.delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Metrics Box */
+.metrics-box {
+    width: 350px;
+    height: auto;
+    background: #1d574c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+/* Ensure tooltip shows up when hovering */
+.metric-container {
+    position: relative;
+    cursor: pointer;
+}
+
+
+
+/* Inner Rectangles */
+.metrics-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.small-rectangle {
+    width: 120px; /* Adjust width */
+    height: 90px; /* Adjust height */
+    background: white;
+    color: #1d574c;
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* Adjust text size */
+    border-radius: 10px;
+    margin: 5px;
+    font-weight: bold;
+    padding: 8px; /* Adjust padding for spacing */
+    text-align: center;
+    line-height: 1.2; /* Decrease line spacing */
+}
+
+
+/* Maximize button */
+.maximize-btn {
+    background-color: #c9e5c0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.maximize-btn:hover {
+    background-color: #a4be9b;
+}
+
+.footer-text {
+    position: fixed; /* Sticks it to the bottom of the screen */
+    bottom: 5px; /* Adjusts the distance from the bottom */
+    right: 5px; /* Adjusts the distance from the right */
+    font-size: 14px;
+
+}
+
+#username-input {
+    width: 150px;
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#join-date {
+    font-size: 20px;
+    font-weight: 400;
+    color: #1d574c;
+    line-height: 1.8; /* Increases spacing between lines */
+}
+
+#user-details p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #1d574c;
+    line-height: 1.8; /* Increases spacing between lines */
+}
+
+.carbon-square {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensure content is centered */
+    gap: 6px; /* Increase space between number and "kg CO₂" */
+    padding: 10px 12px; /* Increase padding inside the rectangle */
+    min-width: 100px; /* Prevent excessive shrinking */
+    height: 35px; /* Slightly taller for better spacing */
+    background-color: #D9534F; /* Red for high CO₂, adjust as needed */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+
+.carbon-input {
+    width: 40px; /* Adjust width */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    padding: 0;
+    margin-right: 2px; /* Minimal spacing */
+}
+
+/* Prevent input arrows from resizing */
+.carbon-input::-webkit-inner-spin-button, 
+.carbon-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Style the tooltip (hidden by default) */
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    bottom: 120%; /* Position above the rectangle */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+/* Ensure tooltip shows up when hovering */
+.eco-score-container {
+    position: relative;
+    cursor: pointer;
+}
