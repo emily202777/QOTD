@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Physics Question of the Day | Miniature Workspace</title>
     <!-- change font later? -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -12,40 +12,29 @@
 <body>
     <header class="dashboard-header">
         <div class="dashboard-info">
-            <h1>Your Dashboard</h1>
-            <p id="userDetails">
-                <span id="username">username</span>
-                <input type="text" id="username-input" class="input-box" style="display: none;">
-                <img src="pencil.png" alt="Edit" class="edit-icon" onclick="editUsername()">
-                <br>
-                <span id="currentDate"></span><br>
-                <span id="timeZone"></span><br>
-                <p id="join-date">Joined: Not Set</p>
-            </p>
+            <h1>Question of the Day</h1>
         </div>
         <div class="quick-actions">
-            <h2>Quick Actions</h2>
             <div class="button-container">
-                <button onclick="toggleActivitiesRectangle(this)" class="btn">Log an Activity</button>
-                <button onclick="toggleMetricsRectangle(this)" class="btn">Metrics</button>
-                <button onclick="toggleRecommendations(this)" class="btn">Magic Recommendations</button>
+                <!-- only need activity logger -->
+                <button onclick="toggleActivitiesRectangle(this)" class="btn">New Question of the Day</button>
+                <!-- look at old questions of the day -->
+                <button onclick="toggleActivitiesRectangle(this)" class="btn">Previous Questions</button>
             </div>
         </div>
     </header>
 
-    <!-- Mountain Background -->
+    <!-- background -->
     <div class="mountains-container">
-        <img src="mountains.png" alt="Mountains Background" class="mountains">
+        <img src="mountains.png" class="mountains">
     </div>
 
     <!-- Containers for Dynamic Sections -->
     <div id="activities-container" class="dynamic-container"></div>
-    <div id="metrics-container" class="dynamic-container"></div>
-    <div id="recommendations-container" class="dynamic-container"></div>
 
     <!-- Footer Text -->
     <div class="footer-text">
-        Emily A, GWC 2025
+        Emily A
     </div>
 
     <script src="script.js"></script> <!-- External JavaScript -->
