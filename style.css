@@ -11,38 +11,6 @@ html, body {
     padding: 0;
     width: 100vw;
 }
-
-
-
-/* Fix the mountains image at the bottom */
-.mountains-container {
-    position: fixed; /* Sticks to the bottom */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: -1; /* Keep it behind other elements */
-}
-
-/* Ensure the mountains image stretches fully */
-.mountains {
-    width: 100%; /* Make it fill the width */
-    height: auto; /* Keep aspect ratio */
-    display: block;
-}
-
-/* Position the pencil icon */
-/* Position the pencil icon next to "username" */
-.edit-icon {
-    width: 16px; /* Adjust icon size */
-    height: auto;
-    margin-left: 8px; /* Space from username */
-    vertical-align: middle; /* Align with text */
-    cursor: pointer; /* Indicate it's clickable */
-    opacity: 0.8; /* Slight transparency */
-    transition: opacity 0.3s ease-in-out;
-}
-
 /* Hover effect */
 .edit-icon:hover {
     opacity: 1; /* Fully visible on hover */
@@ -62,7 +30,6 @@ body {
     overflow-x: hidden;
 }
 
-
 /* Dashboard Header - Align to Left */
 .dashboard-header {
     display: flex;
@@ -81,14 +48,6 @@ body {
     font-weight: 700;
     color: #1d574c;
     margin-bottom: 20px; /* Adds space below "Your Dashboard" */
-}
-
-/* User Information Styling */
-#userDetails {
-    font-size: 20px;
-    font-weight: 400;
-    color: #1d574c;
-    line-height: 1.8; /* Increases spacing between lines */
 }
 
 .quick-actions {
@@ -132,40 +91,6 @@ body {
 
 .btn:hover {
     background-color: #a5c09c; /* Slightly darker hover effect */
-}
-
-
-
-/* Cloud images container - Moves behind all other elements */
-.cloud-container {
-    position: absolute;
-    width: 100%;
-    top: -20px; /* Moves clouds higher */
-    left: 0;
-    display: flex;
-    justify-content: space-between; /* Spreads clouds apart */
-    pointer-events: none; /* Prevents interaction issues */
-    z-index: -1; /* Moves clouds behind other elements */
-}
-
-/* Left Cloud - Bigger, Flipped, and Custom Positioning */
-.cloud-left {
-    position: absolute;
-    top: -200px; /* Moves the cloud higher */
-    left: -150px; /* Moves it off the page */
-    width: 600px;  /* Adjust width */
-    height: auto; /* Ensure correct height */
-    transform: scaleX(-1); /* Flip horizontally */
-}
-
-/* Right Cloud - Smaller, Independent Positioning */
-.cloud-right {
-    position: absolute;
-    top: -200px; /* Moves the cloud higher */
-    right: -150px; /* Moves it off the page */
-    width: 400px;  /* Adjust width */
-    height: auto; /* Ensure correct height */
-    transform: scaleX(-1); /* Flip horizontally */
 }
 
 /* Header styling */
